@@ -1,6 +1,4 @@
-{{
-    config(materialized='table')
-}}
+{{ config(materialized='table', sort='timestamp'}}
 
 with orders as (
     SELECT * FROM RAW.GLOBALMART.ORDERS
