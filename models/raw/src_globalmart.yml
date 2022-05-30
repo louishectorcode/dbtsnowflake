@@ -7,6 +7,11 @@ sources:
       tables:
         - name: customer
         - name: orders
+          columns:
+            - name: orderid
+              tests:
+                - unique
+                - not_null
         - name: product
             # Code to test for data freshness depending on how much the velocity the data is being received
             # columns:
