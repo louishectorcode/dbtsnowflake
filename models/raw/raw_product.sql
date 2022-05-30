@@ -1,6 +1,4 @@
-{{
-    config(materialized='table')
-}}
+{{ config(materialized='table', sort='timestamp'}}
 
 with product as (
     SELECT * FROM RAW.GLOBALMART.PRODUCT
