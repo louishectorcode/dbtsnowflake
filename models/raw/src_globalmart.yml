@@ -2,6 +2,7 @@ version: 2
 
 sources:
     - name: globalmart
+      description: A clone of Snowflake database
       database: raw
       schema: globalmart
       tables:
@@ -10,6 +11,7 @@ sources:
           description: Orders table containing all the information orders using productid and customerid as foreign keys.
           columns:
             - name: orderid
+              description: primary key for orders
               tests:
                 - unique
                 - not_null
