@@ -44,9 +44,11 @@ customer_orders as (
     o.orderprofit,
     o.ordersellingprice,
     o.ordercostprice,
+    c.customerid,
     c.customername,
     c.segment,
     c.country,
+    p.productid,
     p.category,
     p.productname, 
     p.subcategory
