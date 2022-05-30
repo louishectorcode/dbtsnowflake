@@ -11,6 +11,8 @@ with orders as (
     shipmode,
     customerid,
     productid,
+    ordersellingprice,
+    ordercostprice,
     ordersellingprice - ordercostprice as orderprofit
     FROM {{ ref('raw_orders')}}
 ),
@@ -40,6 +42,8 @@ customer_orders as (
     o.shipdate,
     o.shipmode,
     o.orderprofit,
+    o.ordersellingprice,
+    o.ordercostprice,
     c.customername,
     c.segment,
     c.country,
@@ -47,8 +51,8 @@ customer_orders as (
     p.productname, 
     p.subcategory
     FROM orders as o
-    LEFT JOIN customer AS c ON orders.customerid = customer.customerid
-    LEFT JOIN product AS p ON orders.productid = product.productid
+    LEFT JOIN customer AS c ON o.customerid = c.customerid
+    LEFT JOIN product AS p ON o.productid = p.productid
 ),
 
 final as (
