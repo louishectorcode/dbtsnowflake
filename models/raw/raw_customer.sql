@@ -1,5 +1,5 @@
 {{
-    config(amterialized='table')
+    config(materialized='table')
 }}
 
 with customers as (
