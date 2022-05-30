@@ -1,7 +1,7 @@
 {{ config(materialized='table', sort='timestamp')}}
 
 with orders as (
-    SELECT * FROM RAW.GLOBALMART.ORDERS
+    SELECT * FROM {{ source('globalmart', 'orders') }}
 ),
 
 final as (
