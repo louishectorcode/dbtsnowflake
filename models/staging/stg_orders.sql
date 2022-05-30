@@ -1,7 +1,3 @@
-{{
-    config(materialized='table')
-}}
-
 with orders as (
     SELECT
     -- from raw orders 
