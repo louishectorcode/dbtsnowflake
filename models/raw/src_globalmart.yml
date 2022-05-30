@@ -7,6 +7,7 @@ sources:
       tables:
         - name: customer
         - name: orders
+          description: Orders table containing all the information orders using productid and customerid as foreign keys.
           columns:
             - name: orderid
               tests:

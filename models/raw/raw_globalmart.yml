@@ -17,4 +17,4 @@ models:
         - name: orderid
           tests:
             - unique
-            - non_null
+            - not_null

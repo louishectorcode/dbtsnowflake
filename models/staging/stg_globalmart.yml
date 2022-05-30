@@ -1,0 +1,8 @@
+version: 2
+
+models:
+    - name: stg_orders
+      description: One unique order per row
+      columns:
+        - name: orderid
+          description: The primary key for stg_orders
