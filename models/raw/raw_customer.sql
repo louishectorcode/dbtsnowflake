@@ -1,4 +1,4 @@
-{{ config(materialized='table', sort='timestamp'}}
+{{ config(materialized='table', sort='timestamp')}}
 
 with customers as (
     SELECT * FROM RAW.GLOBALMART.CUSTOMER
