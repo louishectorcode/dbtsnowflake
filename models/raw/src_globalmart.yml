@@ -2,9 +2,23 @@ version: 2
 
 sources:
     - name: globalmart
+      description: A clone of Snowflake database
       database: raw
       schema: globalmart
       tables:
         - name: customer
         - name: orders
+          description: Orders table containing all the information orders using productid and customerid as foreign keys.
+          columns:
+            - name: orderid
+              description: primary key for orders
+              tests:
+                - unique
+                - not_null
         - name: product
+            # Code to test for data freshness depending on how much the velocity the data is being received
+            # columns:
+            #   loaded_at_field: loadedat
+            #   freshness:
+            #     warn_after: {count: 12, period: hour}
+            #     error_after: {count: 24, period: hour}
