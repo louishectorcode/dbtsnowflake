@@ -50,10 +50,12 @@ customer_orders as (
     p.category,
     p.productname, 
     p.subcategory,
-    {{ markup('ordersellingprice', 'ordercostprice') }} as markup
+    {{ markup('ordersellingprice', 'ordercostprice') }} as markup,
+    d.delivery_team
     FROM orders as o
     LEFT JOIN customer AS c ON o.customerid = c.customerid
     LEFT JOIN product AS p ON o.productid = p.productid
+    LEFT JOIN {{ref('delivery_team')}} as d on o.shipmode = d.shipmode
 
     {{ limit_data_in_dev('orderdate') }}
 ),
